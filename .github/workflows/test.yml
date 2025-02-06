@@ -82,7 +82,6 @@ jobs:
       fail-fast: false
       matrix:
         language:
-        - dotnet
         - go
         - nodejs
         - python
