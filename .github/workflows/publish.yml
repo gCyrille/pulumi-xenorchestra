@@ -74,11 +74,11 @@ jobs:
       shell: bash
       run: |
         # Get latest stable release. Return only first column from result (tag).
-        LAST_VERSION=$(gh release view --repo vates/pulumi-xenorchestra --json tagName -q .tagName || echo "No stable release" )
+        LAST_VERSION=$(gh release view --repo vatesfr/pulumi-xenorchestra --json tagName -q .tagName || echo "No stable release" )
         {
           echo 'summary<<EOF'
           if [[ "$LAST_VERSION" != "No stable release" ]]; then
-            schema-tools compare --provider="xenorchestra" --old-commit="$LAST_VERSION" --repository="github://api.github.com/vates" --new-commit="--local-path=provider/cmd/pulumi-resource-xenorchestra/schema.json"
+            schema-tools compare --provider="xenorchestra" --old-commit="$LAST_VERSION" --repository="github://api.github.com/vatesfr" --new-commit="--local-path=provider/cmd/pulumi-resource-xenorchestra/schema.json"
           fi
           echo 'EOF'
         } >> "$GITHUB_OUTPUT"
