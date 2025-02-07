@@ -85,4 +85,4 @@ jobs:
       - name: Setup tools
         uses: ./.github/actions/setup-tools
         with:
-          tools: pulumicli, dotnet, go, nodejs, python
+          tools: pulumicli, go, nodejs, python
